@@ -3,20 +3,37 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
-import {FormsModule} from '@angular/forms';
-import {MatTabsModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule, MatInputModule, MatSelectModule, MatTabsModule} from '@angular/material';
+import {ProjectComponent} from "./components/project/project.component";
+import {TeamComponent} from "./components/team/team.component";
+import {PersonComponent} from "./components/person/person.component";
+import {DataHandlerService} from "./services/datahandler.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PersonComponent,
+        ProjectComponent,
+        TeamComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
-        MatTabsModule
+        ReactiveFormsModule,
+        HttpClientModule,
+
+        // Material
+        MatTabsModule,
+        MatSelectModule,
+        MatInputModule,
+        MatButtonModule
     ],
-    providers: [],
+    providers: [
+        DataHandlerService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

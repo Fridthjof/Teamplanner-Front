@@ -1,9 +1,50 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {DataHandlerService} from "../../services/datahandler.service";
 
 @Component({
     selector: 'app-person',
     templateUrl: './person.component.html',
     styleUrls: ['./person.component.scss']
 })
-export class PersonComponent {
+export class PersonComponent implements OnInit {
+
+    personForm: FormGroup = this.formBuiler.group({
+        education: new FormControl(''),
+        technologies: new FormControl(''),
+        yearsOfExp: new FormControl(''),
+        name: new FormControl(''),
+        email: new FormControl(''),
+        cellnumber: new FormControl('')
+    });
+
+    constructor(private formBuiler: FormBuilder,
+                private dataService: DataHandlerService) {
+
+    }
+
+    techsArr: any = [];
+
+    ngOnInit() {
+
+        this.dataService.getAllTechnologies().subscribe(res => {
+                this.techsArr = res;
+                console.log(this.techsArr);
+            },
+            error2 => {
+                console.log(error2);
+            });
+    }
+
+    createPerson() {
+        console.log(this.personForm.value);
+        this.dataService.createNewPerson(this.personForm.value).subscribe(res => {
+                console.log(res);
+            },
+            err => {
+                console.log(err.status);
+            });
+        this.personForm.reset();
+    }
+
 }

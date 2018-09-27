@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<form [formGroup]="personForm">
 
-</body>
-</html>
+    <!--Education-->
+    <mat-form-field appearance="outline">
+        <mat-label>Education</mat-label>
+        <input type="text" formControlName="education" matInput placeholder="Fill out education">
+        <mat-hint>Enter education</mat-hint>
+    </mat-form-field>
+
+    <!--technologies-->
+    <mat-form-field appearance="outline">
+        <mat-label>Technology</mat-label>
+        <mat-select placeholder="Techonologies" formControlName="technologies" multiple>
+            <mat-option *ngFor="let technology of techsArr" [value]="technology">{{technology.name}}</mat-option>
+        </mat-select>
+        <mat-hint>Please select the persons skills of techologies</mat-hint>
+    </mat-form-field>
+
+
+    <!--yearsOfExp-->
+    <mat-form-field appearance="outline">
+        <mat-label>Years of experience</mat-label>
+        <input type="number" formControlName="yearsOfExp" matInput placeholder="Input years of experience">
+        <mat-hint>Enter years of experience</mat-hint>
+    </mat-form-field>
+
+
+    <!--name-->
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input type="text" formControlName="name" matInput placeholder="Input name">
+        <mat-hint>Enter your name please</mat-hint>
+    </mat-form-field>
+
+   <!--email-->
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="email" matInput placeholder="Input email">
+        <mat-hint>Not valid email. Remember @ and .something</mat-hint>
+    </mat-form-field>
+
+   <!--cellnumber-->
+    <mat-form-field appearance="outline">
+        <mat-label>Number</mat-label>
+        <input type="number" formControlName="cellnumber"  matInput placeholder="Input number">
+        <mat-hint>Minimum of 8 numbers</mat-hint>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" (click)="createPerson()">Save</button>
+</form>
