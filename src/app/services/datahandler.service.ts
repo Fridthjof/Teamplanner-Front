@@ -24,6 +24,6 @@ export class DataHandlerService {
     }
 
     suggestTeam(body) {
-        return this.http.post(this.url + '/person/suggestTeam', body, httpOptions);
+        return this.http.post(this.url + '/team/suggestTeam', body, httpOptions);
     }
 }

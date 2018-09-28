@@ -33,6 +33,11 @@ export class ProjectComponent implements OnInit {
     }
 
     suggestTeam() {
-        this.dataService.suggestTeam(this.projectForm.value.technologies);
+        this.dataService.suggestTeam(this.projectForm.value.technologies).subscribe(res => {
+            console.log(res);
+        },
+            error2 => {
+            console.log(error2);
+            });
     }
 }
