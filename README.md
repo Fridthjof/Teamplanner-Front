@@ -5,6 +5,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## To run this application, do the following.
 ---
 - Install node.js and NPM
-- Run *npm install* inside the projects directory e.g 'C:\Users\user\Downloads\TeamplannerCase' to install necessary node_modules 
-- Run *npm start* to start the application on http://localhost:4200
+- Run *npm install* from CMD inside the projects directory e.g 'C:\Users\user\Downloads\TeamplannerCase' to install necessary node_modules 
+- Run *npm start* from CMD to start the application on http://localhost:4200
 
