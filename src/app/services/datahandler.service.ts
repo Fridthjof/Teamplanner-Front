@@ -13,7 +13,7 @@ export class DataHandlerService {
     }
 
 
-    private url = 'http://localhost:8080/api';
+    private url = 'http://localhost:2659/api';
 
     getAllTechnologies() {
         return this.http.get(this.url + '/technology/getAllTechs', httpOptions);
