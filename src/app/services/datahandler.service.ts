@@ -22,4 +22,8 @@ export class DataHandlerService {
     createNewPerson(body) {
         return this.http.post(this.url + '/person/createPerson', body, httpOptions);
     }
+
+    suggestTeam(body) {
+        return this.http.post(this.url + '/person/suggestTeam', body, httpOptions);
+    }
 }

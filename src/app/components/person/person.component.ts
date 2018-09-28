@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {DataHandlerService} from "../../services/datahandler.service";
+import {DataHandlerService} from '../../services/datahandler.service';
 
 @Component({
     selector: 'app-person',
@@ -29,7 +29,6 @@ export class PersonComponent implements OnInit {
 
         this.dataService.getAllTechnologies().subscribe(res => {
                 this.techsArr = res;
-                console.log(this.techsArr);
             },
             error2 => {
                 console.log(error2);
@@ -37,7 +36,6 @@ export class PersonComponent implements OnInit {
     }
 
     createPerson() {
-        console.log(this.personForm.value);
         this.dataService.createNewPerson(this.personForm.value).subscribe(res => {
                 console.log(res);
             },

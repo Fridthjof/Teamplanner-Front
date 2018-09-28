@@ -1,4 +1,50 @@
 <form [formGroup]="projectForm">
 
+    <!--startDate-->
+    <mat-form-field appearance="outline">
+        <mat-label>Start date</mat-label>
+        <input type="date" formControlName="startDate" matInput placeholder="Start Date">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+        <mat-hint>startDate</mat-hint>
+    </mat-form-field>
+
+
+    <!--estimatedEndDate-->
+    <mat-form-field appearance="outline">
+        <mat-label>estimatedEndDate</mat-label>
+        <input type="date" formControlName="estimatedEndDate" matInput placeholder="Input estimatedEndDate">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+        <mat-hint>estimated EndDate</mat-hint>
+    </mat-form-field>
+
+    <!--customer-->
+    <mat-form-field appearance="outline">
+        <mat-label>customer</mat-label>
+        <mat-select placeholder="Techonologies" formControlName="customer">
+            <mat-option *ngFor="let customer of customersArr" [value]="customer">{{customer.name}}</mat-option>
+        </mat-select>
+        <mat-hint>Please select the persons skills of techologies</mat-hint>
+    </mat-form-field>
+
+    <!--description-->
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input type="text" formControlName="description" matInput placeholder="Input description">
+        <mat-hint>Please write a description</mat-hint>
+    </mat-form-field>
+
+    <!--technologies-->
+    <mat-form-field appearance="outline">
+        <mat-label>Technology</mat-label>
+        <mat-select placeholder="Techonologies" formControlName="technologies" multiple>
+            <mat-option *ngFor="let technology of techsArr" [value]="technology">{{technology.name}}</mat-option>
+        </mat-select>
+        <mat-hint>Please select the projets needed skills</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="suggestTeam()">Suggest team</button>
+
 
 </form>

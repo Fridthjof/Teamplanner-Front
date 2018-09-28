@@ -4,12 +4,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatInputModule, MatSelectModule, MatTabsModule} from '@angular/material';
-import {ProjectComponent} from "./components/project/project.component";
-import {TeamComponent} from "./components/team/team.component";
-import {PersonComponent} from "./components/person/person.component";
-import {DataHandlerService} from "./services/datahandler.service";
-import {HttpClientModule} from "@angular/common/http";
+import {
+    MatButtonModule, MatDatepickerModule, MatInputModule, MatNativeDateModule, MatSelectModule,
+    MatTabsModule
+} from '@angular/material';
+import {ProjectComponent} from './components/project/project.component';
+import {TeamComponent} from './components/team/team.component';
+import {PersonComponent} from './components/person/person.component';
+import {DataHandlerService} from './services/datahandler.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,9 @@ import {HttpClientModule} from "@angular/common/http";
         MatTabsModule,
         MatSelectModule,
         MatInputModule,
-        MatButtonModule
+        MatButtonModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
     providers: [
         DataHandlerService
